@@ -34,9 +34,10 @@ const Home = () => {
       <div>Home page with query {searchParams.toString()}...</div>
       <Link to="/about">Go to about!</Link>
       <div className=" mb-5">
-        <p className="text-fuchsia-800">text-fuchsia-800</p>
-        <Badge>Badge</Badge>
-        <Badge variant="secondary">Secondary</Badge>
+        <p className="text-fuchsia-800">HELLO WORLD</p>
+        <Badge variant="secondary">
+          React 19 + Vite + Tailwind CSS v4 + ShadCN UI + React Router v7
+        </Badge>
       </div>
     </>
   );

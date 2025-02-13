@@ -1,4 +1,4 @@
-# React v19 + Vite + Tailwind v4 + Shadcn UI
+# React 19 + Vite + Tailwind CSS v4 + ShadCN UI + React router v7 Starter Template！
 
 ## How to use
 
@@ -15,6 +15,6 @@ npm run dev
 ```
 
 ##### version
-- 2025/02/13 npm i react-router --force
-- 2025/02/13 release
 
+- 2025/02/13 Add React router v7
+- 2025/02/13 release
