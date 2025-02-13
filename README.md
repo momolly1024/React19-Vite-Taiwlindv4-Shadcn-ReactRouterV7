@@ -14,4 +14,7 @@ npm install --legacy-peer-deps
 npm run dev
 ```
 
-#####
+##### version
+- 2025/02/13 npm i react-router --force
+- 2025/02/13 release
+
