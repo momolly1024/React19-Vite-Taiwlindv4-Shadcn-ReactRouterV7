@@ -22,10 +22,12 @@ function App() {
 
   return (
     <>
-      <div className="bg-sky-400 mb-5 p-1">
-        <p className="text-fuchsia-800">adasdasd</p>
+      <div className=" mb-5 p-1">
+        <p className="text-fuchsia-800">Starter Template</p>
 
-        <Badge variant="secondary">Secondary</Badge>
+        <Badge variant="secondary">
+          React 19 + Vite + Tailwind CSS v4 + ShadCN UI
+        </Badge>
       </div>
       <div>
         <Button onClick={() => setCount((count) => count + 1)}>
