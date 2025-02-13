@@ -7,7 +7,7 @@ git clone
 ```
 
 ```
-npm installl
+npm install --legacy-peer-deps
 ```
 
 ```

@@ -22,18 +22,15 @@ function App() {
 
   return (
     <>
-      <div className="bg-sky-400 mb-5">
+      <div className="bg-sky-400 mb-5 p-1">
         <p className="text-fuchsia-800">adasdasd</p>
-        <Badge>Badge</Badge>
+
         <Badge variant="secondary">Secondary</Badge>
       </div>
       <div>
         <Button onClick={() => setCount((count) => count + 1)}>
           Click me count is {count}
         </Button>
-      </div>
-      <div>
-        <CheckboxDemo />
       </div>
     </>
   );
