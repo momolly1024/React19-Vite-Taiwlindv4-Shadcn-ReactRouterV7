@@ -1,40 +1,25 @@
-import { useState } from "react";
-import "./App.css";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+import { useState } from 'react';
+import './App.css';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 import {
   BrowserRouter,
   useSearchParams,
   Link,
   Route,
   Routes,
-} from "react-router";
-const About = () => {
-  console.log("In about...");
-  const [count, setCount] = useState(0);
+} from 'react-router';
+import About from '@/pages/About';
+import { useCounterStore } from '../src/store.js';
 
-  return (
-    <>
-      <div>About page...</div>
-      <Link to="/?hello=world&molly=YA">Go to home!</Link>
-      <p></p>
-      <Button onClick={() => setCount((count) => count + 1)}>
-        Click me count is {count}
-      </Button>
-    </>
-  );
-};
 const Home = () => {
   const [searchParams] = useSearchParams();
-
-  console.log("Home");
+  const { count, increment, reset } = useCounterStore();
 
   return (
     <>
-      {searchParams.toString() !== "" ? (
+      {searchParams.toString() !== '' && (
         <div>Home page with query {searchParams.toString()}...</div>
-      ) : (
-        <></>
       )}
 
       <Link to="/about">Go to about!</Link>
@@ -44,6 +29,14 @@ const Home = () => {
       <Badge variant="secondary">
         React 19 + Vite + Tailwind CSS v4 + ShadCN UI + React Router v7
       </Badge>
+
+      <div className="mt-5 space-y-2">
+        <div className="text-xl">Count: {count}</div>
+        <Button onClick={increment}>＋1</Button>
+        <Button variant="destructive" onClick={reset}>
+          Reset
+        </Button>
+      </div>
     </>
   );
 };
