@@ -11,17 +11,26 @@ import {
 } from 'react-router';
 import About from '@/pages/About';
 import { useCounterStore } from '../src/store.js';
-
+import { useTranslation } from 'react-i18next';
+import './i18n'; 
 const Home = () => {
   const [searchParams] = useSearchParams();
   const { count, increment, reset } = useCounterStore();
+  const { t, i18n } = useTranslation();
 
+  const toggleLanguage = () => {
+    const newLang = i18n.language === 'zh' ? 'en' : 'zh';
+    i18n.changeLanguage(newLang);
+  };
   return (
     <>
       {searchParams.toString() !== '' && (
         <div>Home page with query {searchParams.toString()}...</div>
       )}
-
+      <div style={{ padding: 20 }}>
+        <h1>{t('welcome')}</h1>
+        <button onClick={toggleLanguage}>{t('change_language')}</button>
+      </div>
       <Link to="/about">Go to about!</Link>
       <div className="bg-amber-500 mb-5">
         <p className="text-white">HELLO WORLD</p>

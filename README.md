@@ -16,6 +16,7 @@ npm run dev
 
 ##### version
 
+- 2025/05/07 Add react-i18next and demo(i18n.js)(toggleLanguage)
 - 2025/04/16 Add zustand and demo(store.js)
 - 2025/02/13 Add React router v7
 - 2025/02/13 release
