@@ -1,4 +1,4 @@
-# React 19 + Vite + Tailwind CSS v4 + ShadCN UI + zustand React router v7 Starter Template！
+# React 19 + Vite + Tailwind CSS v4 + ShadCN UI + zustand + React router v7 Starter Template！
 
 ## How to use
 
