@@ -18,7 +18,7 @@ npm run dev
 
 `.prettierrc`
 
-```json
+```js
 {
 	"printWidth": 100, // Maximum line length (100 is good for React/TS projects)
 	"tabWidth": 4, // Use 4 spaces per indentation level
@@ -36,8 +36,8 @@ npm run dev
 }
 ```
 
-##### version
-
+#### version
+- 2025/08/20 Add fetch fake API function and useEffect to get data 
 - 2025/08/19 Optimize Home and About page style (cleaner layout with Tailwind + ShadCN)
 - 2025/08/19 Add Prettier configuration (.prettierrc) with documentation
 - 2025/05/07 Add react-i18next and demo(i18n.js)(toggleLanguage)
