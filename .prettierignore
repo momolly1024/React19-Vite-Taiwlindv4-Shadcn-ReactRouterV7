@@ -1,0 +1,21 @@
+# Ignore dependencies
+node_modules
+
+# Build outputs
+dist
+build
+
+# Vite cache
+.vite
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.*
+
+# Misc
+package-lock.json
+pnpm-lock.yaml
+yarn.lock

@@ -1,65 +1,75 @@
-import { useState } from 'react';
-import './App.css';
+import { BrowserRouter, Routes, Route, Link, useSearchParams } from 'react-router';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import {
-  BrowserRouter,
-  useSearchParams,
-  Link,
-  Route,
-  Routes,
-} from 'react-router';
-import About from '@/pages/About';
-import { useCounterStore } from '../src/store.js';
+import { useCounterStore } from './store';
 import { useTranslation } from 'react-i18next';
-import './i18n'; 
+import About from '@/pages/About';
+import './i18n';
+import './App.css';
+
 const Home = () => {
-  const [searchParams] = useSearchParams();
-  const { count, increment, reset } = useCounterStore();
-  const { t, i18n } = useTranslation();
+	const [searchParams] = useSearchParams();
+	const { count, increment, reset } = useCounterStore();
+	const { t, i18n } = useTranslation();
 
-  const toggleLanguage = () => {
-    const newLang = i18n.language === 'zh' ? 'en' : 'zh';
-    i18n.changeLanguage(newLang);
-  };
-  return (
-    <>
-      {searchParams.toString() !== '' && (
-        <div>Home page with query {searchParams.toString()}...</div>
-      )}
-      <div style={{ padding: 20 }}>
-        <h1>{t('welcome')}</h1>
-        <button onClick={toggleLanguage}>{t('change_language')}</button>
-      </div>
-      <Link to="/about">Go to about!</Link>
-      <div className="bg-amber-500 mb-5">
-        <p className="text-white">HELLO WORLD</p>
-      </div>
-      <Badge variant="secondary">
-        React 19 + Vite + Tailwind CSS v4 + ShadCN UI + React Router v7
-      </Badge>
+	const toggleLanguage = () => {
+		const newLang = i18n.language === 'zh' ? 'en' : 'zh';
+		i18n.changeLanguage(newLang);
+	};
 
-      <div className="mt-5 space-y-2">
-        <div className="text-xl">Count: {count}</div>
-        <Button onClick={increment}>＋1</Button>
-        <Button variant="destructive" onClick={reset}>
-          Reset
-        </Button>
-      </div>
-    </>
-  );
+	return (
+		<div className="space-y-6 p-6">
+			{/* Query string */}
+			{searchParams.toString() && (
+				<div className="text-sm text-gray-500">Query: {searchParams.toString()}</div>
+			)}
+
+			{/* Title + i18n */}
+			<div className="flex items-center justify-center gap-4">
+				<div className="w-[100px] rounded-lg bg-amber-500 px-4 py-2 text-white">
+					{t('welcome')}
+				</div>
+
+				<Button onClick={toggleLanguage}>{t('change_language')}</Button>
+			</div>
+
+			{/* Router link */}
+			<Link to="/about" className="text-blue-600 underline hover:text-blue-800">
+				→ {t('go_to_about')}
+			</Link>
+
+			{/* UI showcase */}
+			<div className="flex flex-col gap-3">
+				<Badge variant="secondary" className="my-2 text-lg">
+					React 19 + Vite + Tailwind CSS v4 + ShadCN UI + React Router v7
+				</Badge>
+			</div>
+
+			{/* Counter */}
+			<div className="space-y-2">
+				<div className="text-xl">Count: {count}</div>
+				<div className="flex justify-center">
+					<Button onClick={increment} className="mr-1">
+						＋1
+					</Button>
+					<Button variant="destructive" onClick={reset}>
+						Reset
+					</Button>
+				</div>
+			</div>
+		</div>
+	);
 };
+
 function App() {
-  return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
-        </Routes>
-      </BrowserRouter>
-    </>
-  );
+	return (
+		<BrowserRouter>
+			<Routes>
+				<Route index element={<Home />} />
+				<Route path="about" element={<About />} />
+			</Routes>
+		</BrowserRouter>
+	);
 }
 
 export default App;
