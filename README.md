@@ -1,9 +1,14 @@
 # React 19 + Vite + Tailwind CSS v4 + ShadCN UI + zustand + React router v7 + Motion Starter Template!
 
+## Version Selection
+
+- **v2.0.0** (Latest): Includes Motion animations and animated icons
+- **v1.0.0** (Stable): Basic template without Motion/Icons - lighter and simpler
+
 ## How to use
 
 ```bash
-git clone [your-repo-url]
+git clone git@github.com:momolly1024/React19-Vite-Taiwlindv4-Shadcn-ReactRouterV7.git
 ```
 
 ```bash
