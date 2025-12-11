@@ -220,3 +220,12 @@ src/
   ├── i18n.js          # Internationalization config
   └── App.tsx          # Main app component
 ```
+
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=momolly1024/React19-Vite-Taiwlindv4-Shadcn-ReactRouterV7&type=date&legend=top-left)](https://www.star-history.com/#momolly1024/React19-Vite-Taiwlindv4-Shadcn-ReactRouterV7&type=date&legend=top-left)
+
+
+
+--
